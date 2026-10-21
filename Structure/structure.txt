@@ -1,0 +1,98 @@
+ANN- health-risk-prediction-project/
+│
+├── Assets/
+│   ├── Age.png
+│   ├── AnyHealthcare.png
+│   ├── AtRisk_by_Age.png
+│   ├── AtRisk_by_Age_Income.png
+│   ├── AtRisk_by_Binary_Features.png
+│   ├── AtRisk_by_Combined_Profile.png
+│   ├── AtRisk_by_General_Health.png
+│   ├── AtRisk_Percent_by_BMI.png
+│   ├── BMI.png
+│   ├── BMI_Categories.png
+│   ├── BMI_vs_Diabetes_Boxplot.png
+│   ├── BMI_vs_Diabetes_Heatmap.png
+│   ├── BMI_vs_Health_Status_Scatter_Trend.png
+│   ├── CholCheck.png
+│   ├── confusion_matrix_catboost.png
+│   ├── confusion_matrix_lightgbm.png
+│   ├── confusion_matrix_model1_raw.png
+│   ├── confusion_matrix_model2_balanced.png
+│   ├── confusion_matrix_model3_smote.png
+│   ├── confusion_matrix_xgb.png
+│   ├── Correlation_Heatmap.png
+│   ├── Correlation_Heatmap_Predictors.png
+│   ├── Diabetes_012_Label.png
+│   ├── Diabetes_012_Label_Pie.png
+│   ├── DiffWalk.png
+│   ├── DiffWalk_vs_Diabetes_Heatmap.png
+│   ├── Education.png
+│   ├── Fruits.png
+│   ├── GenHlth.png
+│   ├── Health_Status_by_Year.png
+│   ├── Health_Status_Raw_Distribution.png
+│   ├── Health_Status_Raw_Distribution_Pie.png
+│   ├── HeartDiseaseorAttack.png
+│   ├── HighBP.png
+│   ├── HighBP_vs_Diabetes_Heatmap.png
+│   ├── HighChol.png
+│   ├── HighChol_vs_Diabetes_Heatmap.png
+│   ├── HvyAlcoholConsump.png
+│   ├── Income.png
+│   ├── MentHlth.png
+│   ├── Mutual_Information_Health_Status.png
+│   ├── Mutual_Information_Ranking.png
+│   ├── NoDocbcCost.png
+│   ├── PhysActivity.png
+│   ├── PhysHlth.png
+│   ├── Sex.png
+│   ├── Smoker.png
+│   ├── Socioeconomic_Diabetes_Trend.png
+│   ├── Socioeconomic_HeartDisease_Trend.png
+│   ├── Stroke.png
+│   └── Veggies.png
+|
+├── Data/
+│   ├── diabetes_012_health_indicators_BRFSS2015.csv
+│   ├── diabetes_012_health_indicators_BRFSS2015_BRFSS2021.csv
+│   └── diabetes_012_health_indicators_BRFSS2021.csv
+│
+├── DOC/
+│   └── Diabetes_EDA_Insights_Report_Final.pdf
+│
+├── Models/
+│   ├── catboost_model.pkl
+│   ├── home_metrics.json
+│   ├── lightgbm_model.pkl
+│   ├── model_catboost_evaluations.json
+│   ├── model_evaluations.json
+│   ├── model_lightgbm_evaluations.json
+│   ├── model_xgb_evaluations.json
+│   ├── model1_raw_weights.keras
+│   ├── model2_downsampled.keras
+│   ├── model3_smote.keras
+│   ├── scaler_preprocessor.pkl
+│   └── xgb_model.pkl
+│
+├── Notebooks/
+│   ├── dataset-combining.ipynb
+│   ├── EDA.ipynb
+│   ├── ML-Algorithm.ipynb
+│   └── Models_Run_fair_comparison.ipynb
+│
+├── Pages/                    
+│   ├── eda.py
+│   ├── home.py                
+│   ├── prediction.py
+│   └── report.py
+│
+├── Structure/
+│   └── structure.txt
+│
+├── .gitignore
+├── .python-version
+├── app.py
+├── README.md
+├── requirements.txt
+└── runtime.txt

@@ -1,0 +1,86 @@
+# ==============================
+# Python cache files
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==============================
+# Virtual environments
+# ==============================
+.venv/
+venv/
+env/
+ENV/
+
+# ==============================
+# IDE and editor settings
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==============================
+# Jupyter Notebook checkpoints
+# ==============================
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# ==============================
+# CatBoost training information
+# ==============================
+catboost_info/
+**/catboost_info/
+
+# ==============================
+# Secrets and environment files
+# ==============================
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# ==============================
+# Logs and temporary files
+# ==============================
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# ==============================
+# Operating system files
+# ==============================
+.DS_Store
+.DS_Store?
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Testing and code quality caches
+# ==============================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# ==============================
+# Build and packaging artifacts
+# ==============================
+build/
+dist/
+*.egg-info/
+
+# ==============================
+# Local environment and tooling
+# ==============================
+.ipython/
+.python_history

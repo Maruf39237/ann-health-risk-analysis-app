@@ -1,0 +1,23 @@
+{
+    "total_records": 453331,
+    "total_features": 52,
+    "years_covered": [
+        2015,
+        2021
+    ],
+    "health_status_counts": {
+        "Healthy": 374597,
+        "At Risk": 78734
+    },
+    "health_status_percentages": {
+        "Healthy": 82.63211648883487,
+        "At Risk": 17.36788351116513
+    },
+    "prevalence": {
+        "high_bp_pct": 44.31905164217757,
+        "high_chol_pct": 42.65646955535801,
+        "heart_disease_pct": 9.723138280858798,
+        "avg_bmi": 28.90587010374318,
+        "phys_activity_pct": 75.00126838888141
+    }
+}
