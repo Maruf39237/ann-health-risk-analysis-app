@@ -94,15 +94,24 @@ GEN_MAP = {1:"Excellent",2:"Very good",3:"Good",4:"Fair",5:"Poor"}
 @st.cache_resource(show_spinner="Loading models…")
 def load_models():
     models = {
-        "ANN (SMOTE)": keras.models.load_model(MODEL_DIR / "model3_smote.keras"),
-        "ANN (Class Weights)": keras.models.load_model(MODEL_DIR / "model1_raw_weights.keras"),
-        "ANN (Downsampled)": keras.models.load_model(MODEL_DIR / "model2_downsampled.keras"),
+        "ANN (SMOTE)": keras.models.load_model(
+            MODEL_DIR / "model3_smote.h5", compile=False
+        ),
+        "ANN (Class Weights)": keras.models.load_model(
+            MODEL_DIR / "model1_raw_weights.h5", compile=False
+        ),
+        "ANN (Downsampled)": keras.models.load_model(
+            MODEL_DIR / "model2_downsampled.h5", compile=False
+        ),
         "XGBoost": joblib.load(MODEL_DIR / "xgb_model.pkl"),
         "CatBoost": joblib.load(MODEL_DIR / "catboost_model.pkl"),
         "LightGBM": joblib.load(MODEL_DIR / "lightgbm_model.pkl"),
     }
+
     preprocessor = joblib.load(MODEL_DIR / "scaler_preprocessor.pkl")
     return models, preprocessor
+
+
 
 @st.cache_data
 def load_metrics():
@@ -571,3 +580,8 @@ if (
             st.success(f"True status: **{true}** — Model was correct ✅")
         else:
             st.error(f"True status: **{true}** — Model was incorrect ❌")
+
+
+
+
+            
