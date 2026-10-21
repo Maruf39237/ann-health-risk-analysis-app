@@ -102,21 +102,27 @@ with report_tab2:
         - Evaluation of SMOTE oversampling and class weighting techniques to address severe target imbalance (`Diabetes_012`).
         """)
 
+
+
 with report_tab3:
     st.subheader("📖 Original PDF Viewer")
-    st.caption(
-        "View the original report with clear text, "
-        "zooming, and page navigation."
-    )
+    st.caption("View the original report with clear text and zoom.")
 
     if PDF_PATH.is_file():
         with open(PDF_PATH, "rb") as f:
             tab3_pdf_bytes = f.read()
         base64_pdf = base64.b64encode(tab3_pdf_bytes).decode("utf-8")
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="1000px" type="application/pdf"></iframe>'
+        
+        # Using <object> tag with the PDF data URI
+        pdf_display = f'''
+            <object data="data:application/pdf;base64,{base64_pdf}#toolbar=1" 
+                    type="application/pdf" 
+                    width="100%" 
+                    height="1000px">
+                <p>Your browser does not support embedded PDFs. 
+                   You can download the report from Tab 1 instead.</p>
+            </object>
+        '''
         st.markdown(pdf_display, unsafe_allow_html=True)
     else:
         st.error(f"PDF report not found: {PDF_PATH}")
-
-
-
