@@ -1,6 +1,5 @@
 from pathlib import Path
 import streamlit as st
-import pymupdf as fitz
 import base64
 
 st.set_page_config(
@@ -38,7 +37,7 @@ st.divider()
 report_tab1, report_tab2, report_tab3 = st.tabs([
     "Executive Hub & Download", 
     "Structured Core Findings", 
-    "Interactive Page-by-Page Reader"
+    "📖 Original PDF Viewer"
 ])
 
 with report_tab1:
@@ -47,9 +46,11 @@ with report_tab1:
     This section provides direct access to the finalized, production-grade analytical report generated from the comprehensive Exploratory Data Analysis of the combined `BRFSS 2015 & 2021` dataset (`453,331` records).
     """)
     
-    with open(PDF_PATH, "rb") as f:
-        pdf_bytes = f.read()
-    
+    if PDF_PATH.is_file():
+        with open(PDF_PATH, "rb") as f:
+            pdf_bytes = f.read()
+    else:
+        pdf_bytes = b""
     
     st.markdown("""
     **Report Specifications:**
@@ -102,22 +103,20 @@ with report_tab2:
         """)
 
 with report_tab3:
-    st.subheader("Interactive Page-by-Page Reader")
-    st.markdown("Browse through the report pages seamlessly using the page navigation selector below:")
-    
-    doc = fitz.open(PDF_PATH)
-    total_pages = len(doc)
-    
-    col_p1, col_p2, col_p3 = st.columns([1, 2, 1])
-    with col_p2:
-        page_num = st.number_input(
-            f"Select Page (1 to {total_pages})",
-            min_value=1,
-            max_value=total_pages,
-            value=1,
-            step=1
-        )
-    
-    page = doc[page_num - 1]
-    pix = page.get_pixmap(dpi=150)
-    st.image(pix.tobytes("png"), caption=f"Page {page_num} of {total_pages}", use_container_width=True)
+    st.subheader("📖 Original PDF Viewer")
+    st.caption(
+        "View the original report with clear text, "
+        "zooming, and page navigation."
+    )
+
+    if PDF_PATH.is_file():
+        with open(PDF_PATH, "rb") as f:
+            tab3_pdf_bytes = f.read()
+        base64_pdf = base64.b64encode(tab3_pdf_bytes).decode("utf-8")
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="1000px" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
+    else:
+        st.error(f"PDF report not found: {PDF_PATH}")
+
+
+

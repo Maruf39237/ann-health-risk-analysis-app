@@ -8,7 +8,7 @@ The project includes **exploratory data analysis (EDA), data preprocessing, mode
 
 ## 🚀 Live Demo
 
-**Streamlit Cloud:** [Open the Live App](YOUR_ACTUAL_STREAMLIT_URL)
+**Streamlit Cloud:** [Open the Live App](https://ann-health-risk-analysis-app-maruf39237.streamlit.app/)
 
 ---
 
